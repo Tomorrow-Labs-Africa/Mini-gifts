@@ -6,15 +6,13 @@ import CardButton from "./components/cardButton";
 function App() {
   return (
     <div className="min-h-screen flex flex-col items-center">
-      {/* Container for the balance card and card buttons */}
       <div className="max-w-md w-full p-4">
-        {/* Balance card */}
         <div
           className="bg-white shadow-md rounded-lg p-6 mb-4"
           style={{ minHeight: "15vh" }}
         >
           <p className="text-gray-700">MiniPay Balance</p>
-          <h2 className="text-2xl font-bold mb-2">5 cUSD</h2>
+          <h2 className="text-4xl font-bold mb-2">5 cUSD</h2>
         </div>
 
         <div className="flex justify-between space-x-4 mb-4">

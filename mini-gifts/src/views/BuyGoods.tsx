@@ -1,7 +1,7 @@
 function BuyGoods() {
   return (
     <div>
-      <h1>Gift cards</h1>
+      <h1>Buy Goods</h1>
     </div>
   );
 }

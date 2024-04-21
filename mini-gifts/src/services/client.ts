@@ -262,14 +262,14 @@ export class CeloService {
       console.error("MiniPay provider not detected");
     }
   }
-  public async sendCusd(receiverAddress: string) {
+  public async sendCusd(receiverAddress: string, amount: string) {
     if (window.ethereum && window.ethereum.isMiniPay) {
       const provider = new providers.Web3Provider(window.ethereum);
       const signer = await provider.getSigner();
 
       let abi = ["function transfer(address to, uint256 value)"];
       const contract = new Contract(this.contractAddress, abi, signer);
-      let tx = await contract.transfer(receiverAddress, parseEther("1"));
+      let tx = await contract.transfer(receiverAddress, parseEther(amount));
 
       let receipt = await tx.wait();
 

@@ -13,7 +13,7 @@ const CardButton: React.FC<CardButtonProps> = ({ image, text, onClick }) => {
       className="block bg-white shadow-md hover:shadow-lg rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-blue-500"
     >
       <div className="w-full h-29">
-        <img src={image} alt="Card" className="w-full h-full object-cover" />
+        <img src={image} alt="Card" width={200} height={120} />
       </div>
       <div className="p-4">
         <p className="text-gray-900 text-lg font-medium">{text}</p>

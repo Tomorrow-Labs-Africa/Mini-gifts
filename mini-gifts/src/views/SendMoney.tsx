@@ -5,7 +5,7 @@ import { CeloService } from "../services/client";
 
 function SendMoney() {
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [amount, setAmount] = useState(""); // State for managing the amount
+  const [amount, setAmount] = useState("");
   const { mutate: sendMoney } = useSendMoney();
 
   const handlePhoneNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +27,8 @@ function SendMoney() {
       rpcUrl: "https://alfajores-forno.celo-testnet.org",
     });
     const result = await celoService.sendCusd(
-      "0x300ddc76321b2B588CE30aFb32Cf683E92572180" //escrow address
+      "0x300ddc76321b2B588CE30aFb32Cf683E92572180",
+      "1"
     );
 
     sendMoney(phoneData);

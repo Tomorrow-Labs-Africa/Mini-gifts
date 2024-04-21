@@ -1,5 +1,5 @@
 
-# Mini-Util :money_with_wings:
+# Mini Gifts :gift:
 
 #### Team
  1. Alphonce Mutebi - Blockchain Developer

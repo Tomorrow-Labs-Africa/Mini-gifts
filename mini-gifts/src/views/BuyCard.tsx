@@ -1,8 +1,16 @@
 import React from "react";
 import Button from "../components/button";
 import { CeloService } from "../services/client";
+import { useDisburseCards } from "../services/useDisburseCards";
 
 const BuyCard: React.FC = () => {
+  const { mutate: sendGiftCard } = useDisburseCards();
+
+  function generateUID() {
+    const timestamp = Date.now().toString(36); // Convert timestamp to base 36 for a compact representation
+    const randomPart = Math.random().toString(36).substring(2, 15); // Generate a random string and cut to desired length
+    return `${timestamp}-${randomPart}`;
+  }
   const handlePayment = async () => {
     const giftCardData = {
       data: {
@@ -10,7 +18,7 @@ const BuyCard: React.FC = () => {
         countryCode: "KE",
         quantity: 1,
         unitPrice: 12.99,
-        customIdentifier: "vbucks4",
+        customIdentifier: generateUID(),
         senderName: "Alphonce Doe",
         recipientEmail: "mutebialphonce@gmail.com",
         recipientPhoneDetails: {
@@ -28,6 +36,7 @@ const BuyCard: React.FC = () => {
       "1"
     );
     console.log("Buying Gift Card");
+    sendGiftCard(giftCardData);
   };
   return (
     <div className="min-h-screen flex flex-col items-center">

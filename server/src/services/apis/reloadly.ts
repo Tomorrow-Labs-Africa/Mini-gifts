@@ -4,6 +4,7 @@ import { AccessToken } from '../../models/rl-access-token';
 import { Transaction } from '../../models/transaction';
 import { TransactionStatus } from '../../models/enums/transaction-status.enum';
 import { TransactionTypes } from '../../models/enums/transaction-types.enum';
+import sendEmail from '../utils/send-email';
 
 const RELOADLY_CLIENT_SECRET = process.env.RELOADLY_CLIENT_SECRET as string;
 const RELOADLY_CLIENT_ID = process.env.RELOADLY_CLIENT_ID as string;
@@ -99,7 +100,25 @@ async function createGiftCardOrder(token: string, orderData: any): Promise<void>
       responseData: response.data,
     });
     await order.save();
+    const respData = response.data
 
+    const emailData = {
+      from: "tomorrowlabsafrica@gmail.com",
+      to: orderData.recipientEmail,
+      subject: `You will received a gift card from ${orderData.senderName}`,
+      html: `
+        <center>
+          <h2>${orderData.senderName} has sent you a gift card from ${respData.product.brand.brandName} 🎉</h2>
+          <h4><p>Gift Card Name: ${respData.product.productName}</p></h4>
+          <h3><p>Total Amount: ${respData.product.totalPrice} ${respData.product.currencyCode}</p></h3>
+          <br>
+          <p>Additional information will be sent to your email shortly</p>
+          <br>
+          <p>Thank you for using Mini-Util</p>
+        </center>
+      `,
+    }
+    sendEmail(emailData)
     return response.data;
 
   } catch (error: any) {

@@ -22,6 +22,7 @@
     "jsonwebtoken": "^9.0.2",
     "moment": "^2.29.4",
     "mongoose": "^7.3.1",
+    "nodemailer": "^6.9.13",
     "utf8": "^3.0.0"
   },
   "devDependencies": {

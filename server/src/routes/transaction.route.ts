@@ -30,4 +30,16 @@ router.post(
   TransactionController.sendToMpesaTillNumber
 );
 
+router.post(
+  '/disburseGiftVoucher',
+  [isAuthenticatedMiddleware],
+  TransactionController.disburseGiftVoucher
+);
+
+router.post(
+  '/listGiftVoucher',
+  [isAuthenticatedMiddleware],
+  TransactionController.listGiftVoucher
+);
+
 export default router;

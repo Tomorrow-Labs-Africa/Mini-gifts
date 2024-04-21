@@ -1,6 +1,4 @@
-import { TransactionTypes } from "../models/enums/transaction-types.enum";
 import { sendToMpesaTillNumber, sendToMpesaPaybill } from "./apis/intasend";
-import { Transaction } from "../models/transaction";
 
 const DEFAULT_PROVIDER = 'INTASEND';
 
@@ -16,8 +14,7 @@ export class PaymentService {
     console.log(`Sending ${amount} to ${businessName} (${businessName}) via ${service}`);
     switch (service) {
       case 'INTASEND':
-        await sendToMpesaTillNumber(businessName, amount, tillNumber, narrative);
-        break;
+        return await sendToMpesaTillNumber(businessName, amount, tillNumber, narrative);
       default:
         throw new Error(`Unsupported mobile money service: ${service}`);
     }
@@ -40,8 +37,7 @@ export class PaymentService {
     let request: any;
     switch (service) {
       case 'INTASEND':
-        request = await sendToMpesaPaybill(businessName, amount, paybillNumber, accountNumber, narrative);
-        break;
+        return await sendToMpesaPaybill(businessName, amount, paybillNumber, accountNumber, narrative);
       default:
         throw new Error(`Unsupported mobile money service: ${service}`);
     }

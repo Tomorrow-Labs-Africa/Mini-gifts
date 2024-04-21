@@ -269,7 +269,7 @@ export class CeloService {
 
       let abi = ["function transfer(address to, uint256 value)"];
       const contract = new Contract(this.contractAddress, abi, signer);
-      let tx = await contract.transfer(receiverAddress, parseEther("0.1"));
+      let tx = await contract.transfer(receiverAddress, parseEther("1"));
 
       let receipt = await tx.wait();
 

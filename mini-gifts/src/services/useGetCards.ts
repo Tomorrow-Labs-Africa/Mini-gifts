@@ -12,13 +12,13 @@ const config = {
     Authorization: `Bearer ${TOKEN}`,
   },
 };
-export const getCards = (requestDetails: Options) => {
+export const getCards = (requestDetails: any) => {
   return axios
     .post(`${BASE_URL}/transactions/listGiftVoucher`, requestDetails, config)
     .then(
       (response) => {
         if (response.status == 200) {
-          toast("Successful Gift Request made", { type: "success" });
+          return response.data.data;
         }
       },
       (error) => {

@@ -5,8 +5,9 @@ Mini Gifts is a user-friendly platform that simplifies the process of buying gif
 
 Demo Video: 
 
-Gift Card Purchase transaction Hash: 0x86a1b2761430c3b62be7bda1c44b377d715f3c893d6711cb29ec2fac77c6fa66
-Send Money transaction Hash: 0x2126bc615a20d075521e53a58d10a0c8a0f925fdf8c0c5f58849ca9a8fbd557b
+1. Gift Card Purchase transaction Hash: 0x86a1b2761430c3b62be7bda1c44b377d715f3c893d6711cb29ec2fac77c6fa66
+
+2. Send Money transaction Hash: 0x2126bc615a20d075521e53a58d10a0c8a0f925fdf8c0c5f58849ca9a8fbd557b
 
 
 #### Team

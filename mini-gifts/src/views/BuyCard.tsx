@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useGetCards } from "../services/useGetCards";
+import Button from "../components/button";
 
-const GiftCards: React.FC = () => {
+const BuyCard: React.FC = () => {
   const { data, isLoading, isError, error, mutate: getCards } = useGetCards();
   console.log("data from top: ", data);
 
@@ -12,7 +13,10 @@ const GiftCards: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center">
       <div className="max-w-md w-full p-4">
+        <h1>Buy</h1>
         {isLoading && <p>Loading...</p>}
+
+        <Button text="Buy Now" onClick={() => console.log("buy")} />
 
         {data && (
           <div className="grid grid-cols-1 gap-4">
@@ -42,4 +46,4 @@ const GiftCards: React.FC = () => {
   );
 };
 
-export default GiftCards;
+export default BuyCard;

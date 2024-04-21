@@ -3,10 +3,6 @@ import { useMutation } from "react-query";
 import { toast } from "react-toastify";
 import { BASE_URL, TOKEN } from "../constants";
 
-interface Options {
-  countryISO: string;
-}
-
 const config = {
   headers: {
     Authorization: `Bearer ${TOKEN}`,

@@ -8,18 +8,14 @@ const config = {
     Authorization: `Bearer ${TOKEN}`,
   },
 };
-export const disburseCards = (requestDetails: any) => {
+
+export const sendMoney = (paymentDetails: any) => {
   return axios
-    .post(
-      `${BASE_URL}/transactions/disburseGiftVoucher`,
-      requestDetails,
-      config
-    )
+    .post(`${BASE_URL}/transactions/sendMobileMoney`, paymentDetails, config)
     .then(
       (response) => {
         if (response.status == 200) {
-          console.log("response: ", response);
-          toast("Gift Card Purchase was successfull", { type: "success" });
+          toast("Successful Payment made", { type: "success" });
         }
       },
       (error) => {
@@ -28,6 +24,6 @@ export const disburseCards = (requestDetails: any) => {
     );
 };
 
-export const useDisburseCards = () => {
-  return useMutation(disburseCards);
+export const useSendMoney = () => {
+  return useMutation(sendMoney);
 };

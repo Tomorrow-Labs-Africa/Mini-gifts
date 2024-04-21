@@ -42,12 +42,13 @@ function MainMenu() {
               onClick={() => console.log("Entertainment clicked")}
             />
           </Link>
-
-          <CardButton
-            image={logo}
-            text="Travel"
-            onClick={() => console.log("Travel clicked")}
-          />
+          <Link to="/send-money">
+            <CardButton
+              image={logo}
+              text="Send Money"
+              onClick={() => console.log("Travel clicked")}
+            />
+          </Link>
         </div>
 
         <div className="flex justify-between space-x-4">

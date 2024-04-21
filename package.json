@@ -5,8 +5,8 @@
   "main": "main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "node dist/main.js",
+    "build": "tsc -p server/tsconfig.json",
+    "start": "node dist/server/src/main.js",
     "start:dev": "nodemon --exec ./node_modules/.bin/ts-node server/src/main.ts"
   },
   "keywords": [],

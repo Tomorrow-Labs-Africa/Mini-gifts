@@ -9,6 +9,7 @@ import BuyGoods from "./views/BuyGoods";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { QueryClient, QueryClientProvider } from "react-query";
+import BuyCard from "./views/BuyCard";
 
 function App() {
   const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ function App() {
           <Route path="/send-money" element={<SendMoney />} />
           <Route path="/buy-goods" element={<BuyGoods />} />
           <Route path="/bills" element={<Bills />} />
+          <Route path="/card-detail" element={<BuyCard />} />
         </Routes>
       </div>
       <ToastContainer />

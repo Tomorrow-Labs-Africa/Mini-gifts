@@ -5,7 +5,6 @@ import CardButton from "../components/cardButton";
 import { useState, useEffect } from "react";
 import { CeloService } from "../services/client";
 import { Link } from "react-router-dom";
-
 function MainMenu() {
   const [balance, setBalance] = useState(0);
 
@@ -54,12 +53,12 @@ function MainMenu() {
         <div className="flex justify-between space-x-4">
           <CardButton
             image={logo}
-            text="Shopping"
+            text="Buy Goods"
             onClick={() => console.log("Shopping clicked")}
           />
           <CardButton
             image={logo}
-            text="Food"
+            text="Buy Airtime"
             onClick={() => console.log("Food clicked")}
           />
         </div>

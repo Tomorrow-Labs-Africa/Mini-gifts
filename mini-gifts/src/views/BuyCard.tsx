@@ -33,7 +33,7 @@ const BuyCard: React.FC = () => {
     });
     const result = await celoService.sendCusd(
       "0x300ddc76321b2B588CE30aFb32Cf683E92572180", //escrow address
-      "1"
+      "13"
     );
     console.log("Buying Gift Card");
     sendGiftCard(giftCardData);

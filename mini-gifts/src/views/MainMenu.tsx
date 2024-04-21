@@ -5,6 +5,12 @@ import CardButton from "../components/cardButton";
 import { useState, useEffect } from "react";
 import { CeloService } from "../services/client";
 import { Link } from "react-router-dom";
+import gifts from "../assets/gifts.svg";
+import paybills from "../assets/paybills.svg";
+import withdraw from "../assets/withdraw.svg";
+import airtime from "../assets/airtime.svg";
+import money from "../assets/money.svg";
+
 function MainMenu() {
   const [balance, setBalance] = useState(0);
 
@@ -36,14 +42,14 @@ function MainMenu() {
         <div className="flex justify-between space-x-4 mb-4">
           <Link to="/gifts">
             <CardButton
-              image={logo}
+              image={paybills}
               text="Gift Cards"
               onClick={() => console.log("Entertainment clicked")}
             />
           </Link>
           <Link to="/send-money">
             <CardButton
-              image={logo}
+              image={gifts}
               text="Send Money"
               onClick={() => console.log("Travel clicked")}
             />
@@ -52,12 +58,12 @@ function MainMenu() {
 
         <div className="flex justify-between space-x-4">
           <CardButton
-            image={logo}
+            image={airtime}
             text="Buy Goods"
             onClick={() => console.log("Shopping clicked")}
           />
           <CardButton
-            image={logo}
+            image={money}
             text="Buy Airtime"
             onClick={() => console.log("Food clicked")}
           />

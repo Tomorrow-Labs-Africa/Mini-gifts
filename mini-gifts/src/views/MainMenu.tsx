@@ -38,7 +38,7 @@ function MainMenu() {
           <Link to="/gifts">
             <CardButton
               image={logo}
-              text="Entertainment"
+              text="Gift Cards"
               onClick={() => console.log("Entertainment clicked")}
             />
           </Link>

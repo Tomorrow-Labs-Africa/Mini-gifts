@@ -114,7 +114,7 @@ async function createGiftCardOrder(token: string, orderData: any): Promise<void>
           <br>
           <p>Additional information will be sent to your email shortly</p>
           <br>
-          <p>Thank you for using Mini-Util</p>
+          <p>Thank you for using Mini Gifts</p>
         </center>
       `,
     }

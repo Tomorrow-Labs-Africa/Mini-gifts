@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const TOKEN_SECRET = process.env.JWT_TOKEN_SECRET as string;
+const VALID_API_KEY = process.env.VALID_API_KEY as string;
 
 
 function check (req: Request, res: Response, next: NextFunction) {
@@ -45,17 +46,14 @@ function check (req: Request, res: Response, next: NextFunction) {
     })
   }
 
-  jwt.verify(token, TOKEN_SECRET, (err, user) => {
-    if (err) {
-      return res.status(403).json({
-        status: false,
-        error: 'Invalid access token provided, please login again.'
-      });
-    }
-
-    // req.user = user; // Save the user object for further use
+  if (token == VALID_API_KEY) {
     next();
-  });
+  } else {
+    return res.status(403).json({
+      status: false,
+      error: 'Invalid access token provided, please login again.'
+    });
+  }
 }
 
 export default check;

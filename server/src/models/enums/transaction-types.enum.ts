@@ -4,4 +4,5 @@ export enum TransactionTypes {
   PAYBILL = 2,
   BUY_GOODS = 3,
   AIRTIME_TOP_UP = 4,
+  GIFT_CARD_ORDER = 5
 }
